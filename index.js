@@ -39,7 +39,7 @@ client.connect(err => {
     })
   });
 
-  //Delete method whith id
+  //Delete  with id
   app.delete('/delete/:id', (req,res)=>{
       volunTeerCollection.deleteOne({_id: ObjectId(req.params.id)})
       .then( result => {
