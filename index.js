@@ -26,7 +26,7 @@ client.connect(err => {
       const volunteerItem = req.body;
       volunTeerItemCollection.insertOne(volunteerItem)
       .then(result => {
-        res.send(result.insertedCount)
+        res.send(result)
       })
   });
 
@@ -35,7 +35,7 @@ client.connect(err => {
     const volunteer = req.body;
     volunTeerCollection.insertOne(volunteer)
     .then(result => {
-      res.send(result.insertedCount)
+      res.send(result)
     })
   });
 
@@ -43,14 +43,11 @@ client.connect(err => {
   app.delete('/delete/:id', (req,res)=>{
       volunTeerCollection.deleteOne({_id: ObjectId(req.params.id)})
       .then( result => {
-        res.send(result.deletedCount)
+        res.send(result)
       })
   })
 
-  //blank api
-  app.get('/', (res,res)=>{
-    res.send('Its working')
-  })
+
   // Get Volunteer Item 
   app.get( '/volunteerItem' , (req,res) =>{
     volunTeerItemCollection.find({})
@@ -83,6 +80,10 @@ client.connect(err => {
     })
   })
 
+  //blank api
+  app.get('/', (req,res)=>{
+    res.send('Its working')
+  })
 
   
 });
