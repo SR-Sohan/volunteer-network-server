@@ -47,6 +47,10 @@ client.connect(err => {
       })
   })
 
+  //blank api
+  app.get('/', (res,res)=>{
+    res.send('Its working')
+  })
   // Get Volunteer Item 
   app.get( '/volunteerItem' , (req,res) =>{
     volunTeerItemCollection.find({})
