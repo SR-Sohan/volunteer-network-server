@@ -1,6 +1,9 @@
 {
   "name": "volunteer-network-server",
   "version": "1.0.0",
+  "engines": {
+    "node": "12.18.3"
+    },
   "description": "",
   "main": "index.js",
   "scripts": {
